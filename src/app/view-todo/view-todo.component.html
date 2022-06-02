@@ -1,0 +1,22 @@
+<div class="flex flex-col space-y-2 w-full">
+  <ng-container *ngIf="todos$ | async as todos">
+    <ng-container *ngFor="let todo of todos; trackBy: trackByTodo">
+      <div
+        class="w-full flex flex-row text-2xl font-semibold border border-gray-500 p-4 rounded-md shadow-md"
+      >
+        <div class="flex-1">
+          {{ todo.name }}
+        </div>
+        <div class="">
+          <input
+            (change)="onToggleTodo(todo)"
+            type="checkbox"
+            [checked]="todo.completed"
+            [value]="todo.completed"
+            class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+          />
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
