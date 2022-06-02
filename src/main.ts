@@ -11,5 +11,5 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [importProvidersFrom(HttpClientModule), importProvidersFrom(RouterModule.forRoot([]))],
+  providers: [importProvidersFrom(HttpClientModule), importProvidersFrom(AppRoutingModule)],
 }).catch(err => console.error(err));
