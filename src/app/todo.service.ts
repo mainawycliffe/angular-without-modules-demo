@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-type Todo = {
+export type Todo = {
   name: string;
   completed: boolean;
 }
@@ -15,11 +15,11 @@ export class TodoService {
   todos: Todo[] = [
     {
       "name": "Learn Angular",
-      "completed": false
+      "completed": true
     },
     {
       name: "Learn CSS",
-      completed: false
+      completed: true
     },
     {
       name: "Talk About Angular without Modules",
