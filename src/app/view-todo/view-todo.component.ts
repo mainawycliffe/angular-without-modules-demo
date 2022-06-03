@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todo, TodoService } from '../todo.service';
 import { CompleteStrikeThroughDirective } from '../complete-strike-through.directive';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-view-todo',
   standalone: true,
-  imports: [CompleteStrikeThroughDirective, CommonModule],
+  imports: [CompleteStrikeThroughDirective, CommonModule, RouterModule],
   templateUrl: './view-todo.component.html',
   styleUrls: ['./view-todo.component.scss']
 })
