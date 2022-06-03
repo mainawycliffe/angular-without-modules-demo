@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todo, TodoService } from '../todo.service';
+import { CompleteStrikeThroughDirective } from '../complete-strike-through.directive';
 
 @Component({
   selector: 'app-view-todo',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CompleteStrikeThroughDirective, CommonModule],
   templateUrl: './view-todo.component.html',
   styleUrls: ['./view-todo.component.scss']
 })
@@ -15,8 +16,7 @@ export class ViewTodoComponent implements OnInit {
 
   constructor(private todoService: TodoService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onToggleTodo(todo: Todo) {
     this.todoService.toggleTodo(todo)
@@ -25,5 +25,4 @@ export class ViewTodoComponent implements OnInit {
   trackByTodo(index: number, todo: Todo) {
     return todo.name;
   }
-
 }

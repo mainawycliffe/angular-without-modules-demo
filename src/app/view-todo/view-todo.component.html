@@ -4,7 +4,7 @@
       <div
         class="w-full flex flex-row text-2xl font-semibold border border-gray-500 p-4 rounded-md shadow-md"
       >
-        <div class="flex-1">
+        <div class="flex-1" [appCompleteStrikeThrough]="todo.completed">
           {{ todo.name }}
         </div>
         <div class="">
