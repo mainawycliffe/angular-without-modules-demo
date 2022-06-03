@@ -9,24 +9,21 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.scss']
+  styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTodoComponent implements OnInit {
-
   formModel: Todo = {
     completed: false,
-    name: ''
-  }
+    name: '',
+  };
 
-  constructor(private todos: TodoService, private router: Router) { }
+  constructor(private todos: TodoService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit(todo: Todo) {
-    console.log(todo)
-    this.todos.addTodo(todo)
-    this.router.navigateByUrl("/")
+    console.log(todo);
+    this.todos.addTodo(todo);
+    this.router.navigateByUrl('/');
   }
-
 }
