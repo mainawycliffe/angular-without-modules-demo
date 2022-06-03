@@ -7,7 +7,6 @@ import { DateTime } from 'luxon';
 })
 export class DateTimePipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): string | null {
-    console.log(value);
     if (typeof value === 'string') {
       return DateTime.fromISO(value).toLocaleString(DateTime.DATETIME_MED);
     }

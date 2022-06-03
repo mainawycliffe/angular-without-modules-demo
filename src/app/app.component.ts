@@ -9,6 +9,4 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   imports: [RouterModule, CommonModule],
 })
-export class AppComponent {
-  title = 'angular-without-modules-google-io-extended-2022-demo';
-}
+export class AppComponent {}

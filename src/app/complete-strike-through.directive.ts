@@ -1,11 +1,10 @@
-import { Directive, ElementRef, Input, OnChanges, OnInit, } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appCompleteStrikeThrough]',
-  standalone: true
+  standalone: true,
 })
 export class CompleteStrikeThroughDirective implements OnInit, OnChanges {
-
   @Input() appCompleteStrikeThrough: boolean = false;
 
   constructor(private el: ElementRef<HTMLDivElement>) {}
