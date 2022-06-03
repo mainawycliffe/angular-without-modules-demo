@@ -1,1 +1,48 @@
-<div class=""></div>
+<div class="flex flex-col">
+  <form (submit)="onSubmit(addTodoForm.value)" #addTodoForm="ngForm">
+    <div class="flex flex-col space-y-8 p-10 text-xl font-bold">
+      <h3 class="font-bold text-3xl">Add a new todo</h3>
+      <div class="flex flex-col w-full space-y-2">
+        <label class="block text-2xl font-normal">Todo *</label>
+        <input
+          class="w-full px-4 py-2 text-2xl rounded-md border-2 border-black invalid:border-red-500"
+          type="text"
+          name="name"
+          placeholder="Todo i.e. Learn Angular"
+          [(ngModel)]="formModel.name"
+          required
+          #todoInput="ngModel"
+        />
+        <ng-container *ngIf="todoInput.dirty && todoInput.invalid">
+          <div class="text-red-600">
+            <span *ngIf="todoInput.errors?.['required']">
+              Todo is required!
+            </span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="block w-full">
+        <input
+          class="inline-block"
+          type="checkbox"
+          name="completed"
+          id="completed"
+          [(ngModel)]="formModel.completed"
+          #completedInout="ngModel"
+        />
+        <label for="completed" class="inline-block ml-2 text-2xl font-normal"
+          >is complete?</label
+        >
+      </div>
+      <div class="flex flex-col w-full space-y-2">
+        <button
+          class="bg-gray-900 text-white font-semibold w-full px-4 py-4 space-x-4 text-2xl rounded-md disabled:bg-gray-500"
+          [disabled]="!addTodoForm.valid"
+          type="submit"
+        >
+          <span>Add Todo</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

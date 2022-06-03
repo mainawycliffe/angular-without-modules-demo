@@ -40,7 +40,10 @@ export class TodoService {
   constructor() {}
 
   addTodo(todo: Todo) {
-    this.todos.push(todo)
+    this.todos = [
+      ...this.todos,
+      todo
+    ]
     this.todos$.next(this.todos)
   }
 
