@@ -13,7 +13,12 @@
         class="w-full flex flex-row text-2xl font-semibold border border-gray-500 p-4 rounded-md shadow-md"
       >
         <div class="flex-1" [appCompleteStrikeThrough]="todo.completed">
-          {{ todo.name }}
+          <div class="block">
+            {{ todo.name }}
+          </div>
+          <div *ngIf="todo.completed" class="block text-lg text-gray-500">
+            Completed on: {{ todo.completedOn | dateTime }}
+          </div>
         </div>
         <div class="">
           <input
