@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todo, TodoService } from '../todo.service';
 import { FormsModule } from '@angular/forms';
@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTodoComponent implements OnInit {
+  router = inject(Router);
+
   formModel: Todo = {
     completed: false,
     name: '',
   };
 
-  constructor(private todos: TodoService, private router: Router) {}
+  constructor(private todos: TodoService) {}
 
   ngOnInit(): void {}
 
