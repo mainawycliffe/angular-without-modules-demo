@@ -5,4 +5,4 @@ with only standalone components, no modules and it's for my talk on June 14 at
 Google IO Extended in Nairobi.
 
 Here is the link to the live app
-[here](https://angular-without-modules-google-io-extended-2022-demo.vercel.app/).
+[here](https://angular-without-modules.vercel.app/).
