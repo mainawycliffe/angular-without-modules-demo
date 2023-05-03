@@ -16,12 +16,12 @@ export class TodoService {
     {
       name: 'Learn Angular',
       completed: true,
-      completedOn: DateTime.now().minus({ day: 2 }).toISO(),
+      completedOn: DateTime.now().minus({ day: 2 }).toISO() ?? undefined,
     },
     {
       name: 'Learn CSS',
       completed: true,
-      completedOn: DateTime.now().minus({ hour: 3 }).toISO(),
+      completedOn: DateTime.now().minus({ hour: 3 }).toISO() ?? undefined,
     },
     {
       name: 'Talk About Angular without Modules',
@@ -59,7 +59,7 @@ export class TodoService {
           ...t,
           completed: !t.completed,
           ...(!t.completed
-            ? { completedOn: DateTime.now().toISO() }
+            ? { completedOn: DateTime.now().toISO() ?? undefined }
             : // if toggle is removed, remove completedOn
               { completedOn: undefined }),
         };
